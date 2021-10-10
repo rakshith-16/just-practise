@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-primary">
+        <h2>creating student managenent</h2>
+      </nav>
+  <br>
+  <br>
+
+  
+<!-- Button trigger modal -->
+  <button type="button" class="btn btn-success"" data-toggle="modal" data-target="#exampleModal">
+    Add Store +
+  </button>
+  <br>
+  <br>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Store</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form id="fromStudent" name="fromStudent">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Store Id</label>
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputState">Store Owner</label>
+                    <select id="inputState" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>All</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Store Area Level</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>Choose...</option>
+                          <option>All</option>
+                        </select>
+                      </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputState">Store Area Name</label>
+                      <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>All</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Store Name</label>
+                        <input type="text" class="form-control" id=strName" placeholder="">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputEmail4">Storea Manager</label>
+                        <input type="text" class="form-control" id="strMngr" placeholder="">
+                      </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Store Address</label>
+                        <textarea id="strAdd name="w3review" rows="0.5" cols="25"></textarea>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputEmail4">Contact No</label>
+                        <input type="text" class="form-control" id="strContact" placeholder="">
+                        <br>
+                        <label for="inputEmail4">Store Status</label>
+                        <input type="text" class="form-control" id="strStatus" placeholder="">
+                      </div>
+                      
+                  </div>
+               
+               
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="save" onclick="add()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="col-sm-8">
+
+    <div class="form-row">
+        <div class="form-group col-md-2">        
+            <select id="inputState" class="form-control">
+              <option selected>--Select Descom--</option>
+              <option >All</option>
+              <option></option>
+            </select>
+          </div>
+        <div class="form-group col-md-2">
+          <select id="inputState" class="form-control">
+            <option selected>--Zone--</option>
+            <option >All</option>
+            <option></option>
+          </select>
+        </div>
+        <div class="form-group col-md-2">
+            <select id="inputState" class="form-control">
+              <option selected>--Circle--</option>
+              <option>All</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <select id="inputState" class="form-control">
+              <option selected>--Division--</option>
+             
+              <option>All</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <select id="inputState" class="form-control">
+              <option selected>--Sub Division--</option>
+              <option>All</option>
+            </select>
+            <button type="button" class="btn btn-primary">Add</button>
+          </div>
+
+
+         </div>
+
+         <!-- serch bar -->
+
+         <div class="input-group" class="col-md-4 offset-md-4" >
+            <!-- <input type="text" class="form-control" aria-label="Text input with segmented dropdown button"> -->
+            <div class="input-group-append">
+              <button type="button" class="btn btn-outline-secondary">Tools</button>
+              <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div role="separator" class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </div>
+          </div>
+          
+         <!-- search bar -->
+
+         <div class="panel-body">
+          <table id="tb1-student" class="table table-bordered" cellpadding="0" callspacing="0" width="100%">
+
+<thead>
+<tr>
+    <th>Store ID</th>
+    <th>Store Owner</th>
+    <th>Store Area level</th>
+    <th>Store Area Code</th>
+    <th>Store Area Name</th>
+    <th>Store Name</th>
+    <th>Store Address</th>
+    <th>Store Manager</th>
+    <th>Contact No</th>	
+
+</tr>
+</thead>
+          </table>
+         </div>
+
+     <script src="component/jquery/jquery.js" type="text/javascript"></script>
+     <script src="component/jquery/jquery.min.js" type="text/javascript"></script>
+     <script src="component/jquery.validate.min.js" type="text/javascript"></script>
+
+<script>
+
+var isNew=true;
+function add()
+{
+
+    if($("#fromStudent").valid())
+    {
+        var url="";
+        var data="";
+        var method;
+
+
+        if(isNew==true)
+        {
+            url='add.jsp';
+            data=$("#fromStudent").serialize();
+            methos='POST'
+        }
+
+$.ajax({
+type:method,
+url:url,
+datatype:'JSON',
+data:data,
+
+success:function(data)
+{
+
+if(isNew==true)
+{
+
+    alert("Record Added")
+}
+
+}
+
+
+
+})
+
+    }
+}
+
+</script>
+
+
+</body>
+</html>
